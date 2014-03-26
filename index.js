@@ -48,7 +48,7 @@ module.exports = {
 
       var body = JSON.stringify({
         query: query,
-        parmas: args
+        params: args
       });
 
       request({
