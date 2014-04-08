@@ -45,7 +45,16 @@ These are the same thing as accessing the REST API directly. The only difference
 
         }, function (err, json) {
 
-          console.log(err, json);
+          if (err) {
+            // 1) this is an error from request (module) 
+            // if you messed up the url or your server
+            // is not responding
+            // 2) this is the stacktrace from neo4j
+            // which means you done messed up
+            console.log(err);
+          } else {
+            console.log(json);
+          }
 
         });
 
