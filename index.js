@@ -61,7 +61,19 @@ module.exports = {
  
       }, function (err, res, json) {
 
-        next(err, json);
+        if (err) {
+          next(err);
+        } else {
+        
+          var data = json.data;
+
+          if (!data) {
+            next(json);
+          } else {
+            next(null, json);
+          }
+
+        }
 
       });
 
