@@ -19,7 +19,11 @@ module.exports = {
 
     that.run({
 
-      query: [],
+      query: [
+        'MATCH (n)',
+        'RETURN count(n)',
+        'LIMIT 1'
+      ],
       params: params
 
     }, function (err) {
